@@ -1,5 +1,4 @@
 abstract class Race {
-  private static _instances = 0;
   private _name: string;
   private _dexterity: number;
 
@@ -16,12 +15,11 @@ abstract class Race {
     return this._dexterity;
   }
 
-  abstract get maxLifePoint(): number;
-
-  static createdRacesIntances(): number {
-    this._instances += 1;
+  static createdRacesInstances(): number {
     throw new Error('Not implemented');
   }
+  
+  abstract get maxLifePoints(): number;
 }
 
 export default Race;
