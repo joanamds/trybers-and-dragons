@@ -1,6 +1,6 @@
 import Race from './Race';
 
-class Elf extends Race {
+export default class Elf extends Race {
   private static _instances = 0;
   private _maxLifePoints: number;
 
@@ -8,14 +8,6 @@ class Elf extends Race {
     super(name, dexterity);
     this._maxLifePoints = 99;
     Elf._instances += 1;
-  }
-
-  get name(): string {
-    return this.name;
-  }
-
-  get dexterity(): number {
-    return this.dexterity;
   }
 
   get maxLifePoints(): number {
@@ -26,5 +18,3 @@ class Elf extends Race {
     return Elf._instances;
   }
 }
-
-export default Elf;
