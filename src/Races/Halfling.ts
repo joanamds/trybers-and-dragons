@@ -1,7 +1,7 @@
 import Race from './Race';
 
 export default class Halfling extends Race {
-  private static _instances = 0;
+  static _instances = 0;
   private _maxLifePoints: number;
 
   constructor(name: string, dexterity: number) {
