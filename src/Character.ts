@@ -2,97 +2,98 @@ import Archetype, { Mage } from './Archetypes';
 import Energy from './Energy';
 import Fighter from './Fighter';
 import Race, { Elf } from './Races';
+import getRandomInt from './utils';
 
 export default class Character implements Fighter {
   private _race: Race;
   private _archetype: Archetype;
   private _maxLifePoints: number;
-  lifePoints: number;
-  strength: number;
-  defense: number;
+  private _lifePoints: number;
+  private _strength: number;
+  private _defense: number;
   private _dexterity: number;
   private _energy: Energy;
+  private _name: string;
 
-  constructor(private name: string) {
-    this._dexterity = Math.floor(Math.random() * 10) + 1;
-    this._race = Elf.defaultElf(this._dexterity);
-    this._archetype = new Mage('default');
+  constructor(name: string) {
+    this._name = name;
+    this._dexterity = getRandomInt(1, 10);
+    this._race = new Elf(this._name, this._dexterity);
+    this._archetype = new Mage(this._name);
     this._maxLifePoints = this._race.maxLifePoints / 2;
-    this.lifePoints = this._maxLifePoints;
-    this.strength = Math.floor(Math.random() * 10) + 1;
-    this.defense = Math.floor(Math.random() * 10) + 1;
+    this._lifePoints = this._maxLifePoints;
+    this._strength = getRandomInt(1, 10);
+    this._defense = getRandomInt(1, 10);
     this._energy = {
       type_: this._archetype.energyType,
-      amount: Math.floor(Math.random() * 10) + 1, 
+      amount: getRandomInt(1, 10), 
     };
   }
 
-  getRace(): Race {
+  get race(): Race {
     return this._race;
   }
 
-  getArchetype(): Archetype {
+  get archetype(): Archetype {
     return this._archetype;
   }
 
-  getLifePoints(): number {
-    return this.lifePoints;
+  get lifePoints(): number {
+    return this._lifePoints;
   }
 
-  getStrength(): number {
-    return this.strength;
+  get strength(): number {
+    return this._strength;
   }
 
-  getDefense(): number {
-    return this.defense;
+  get defense(): number {
+    return this._defense;
   }
 
-  getDexterity(): number {
+  get dexterity(): number {
     return this._dexterity;
   }
 
-  getEnergy(): Energy {
-    return this._energy;
+  get energy(): Energy {
+    return {
+      type_: this._energy.type_,
+      amount: this._energy.amount,
+    };
   }
 
   receiveDamage(attackPoints: number): number {
-    const damage = this.defense - attackPoints;
-    let lp = this.lifePoints;
-    if (damage > 0) {
-      const result = lp - damage;
-      return result;
-    }
+    const damage = attackPoints - this._defense;
     if (damage <= 0) {
-      const result = lp - 1;
-      return result;
+      return this._lifePoints;
     }
-    if (lp <= 0) {
-      lp = 1;
+    if ((this._lifePoints - damage) <= 0) {
+      this._lifePoints = -1;
+    } else {
+      this._lifePoints -= damage;
     }
 
-    return lp;
+    return this._lifePoints;
   }
 
   attack(enemy: Fighter): void {
-    const damage = this.strength;
+    const damage = this._strength;
     enemy.receiveDamage(damage);
   }
 
   levelUp(): void {
     const min = 1;
-    const max = 10; 
-    const maxRaceLifePoints = this._race.maxLifePoints; 
-
-    this._maxLifePoints += Math.floor(Math.random() * (max - min + 1) + min);
-    this.strength += Math.floor(Math.random() * (max - min + 1) + min);
-    this._dexterity += Math.floor(Math.random() * (max - min + 1) + min);
-    this.defense += Math.floor(Math.random() * (max - min + 1) + min);
-    this._energy.amount = 10;
-
-    if (this._maxLifePoints > maxRaceLifePoints) {
+    const max = 10;
+    const maxRaceLifePoints = this._race.maxLifePoints;
+  
+    this._maxLifePoints += getRandomInt(min, max);
+    this._strength += getRandomInt(min, max);
+    this._dexterity += getRandomInt(min, max);
+    this._defense += getRandomInt(min, max);
+    
+    if (this._maxLifePoints >= maxRaceLifePoints) {
       this._maxLifePoints = maxRaceLifePoints;
     }
-    
-    this.lifePoints = this._maxLifePoints;
-  }
+    this._energy.amount = 10;
+    this._lifePoints = this._maxLifePoints;
+  }  
 }

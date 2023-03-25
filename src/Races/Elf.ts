@@ -17,8 +17,4 @@ export default class Elf extends Race {
   static createdRacesInstances(): number {
     return Elf._instances;
   }
-
-  static defaultElf(dexterity: number): Elf {
-    return new Elf('Default Elf', dexterity);
-  }
 }
