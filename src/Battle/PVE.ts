@@ -8,7 +8,7 @@ export default class PVE extends Battle {
   monsters: (Monster | SimpleFighter)[];
 
   constructor(
-    player: Character,
+    player: Character | Fighter,
     monsters: (Monster | SimpleFighter | Fighter) [],
   ) {
     super(player);
