@@ -4,9 +4,7 @@
 Neste projeto fomos desafiados a criar uma simulação de jogo de RPG utilizando Programação Orientada a Objetos e SOLID. Foram interfaces e classes representando segmentos do jogo, também foram criadas classes para simular como seriam as lutas entre as personagens. 
 
 ## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
+![TrybersAndDragons (1)](https://user-images.githubusercontent.com/106452876/228257159-1e7a2436-1c56-4659-ad21-a9a91f426cc5.png)
 
 ## Tecnologias usadas
 Back-end:
