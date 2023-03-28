@@ -8,7 +8,7 @@ Neste projeto fomos desafiados a criar uma simulação de jogo de RPG utilizando
 
 ## Tecnologias usadas
 Back-end:
-> Desenvolvido usando: Docker, docker-compose, MySQL, Node.js, TypeScript, JSON Web Token(JWT)
+> Desenvolvido usando: Docker, docker-compose, TypeScript, POO
 
 
 
