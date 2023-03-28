@@ -1,10 +1,36 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+
+# Trybers And Dragons :dragon_face:
+
+Neste projeto fomos desafiados a criar uma simulação de jogo de RPG utilizando Programação Orientada a Objetos e SOLID. Foram interfaces e classes representando segmentos do jogo, também foram criadas classes para simular como seriam as lutas entre as personagens. 
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
+## Tecnologias usadas
+Back-end:
+> Desenvolvido usando: Docker, docker-compose, MySQL, Node.js, TypeScript, JSON Web Token(JWT)
+
+
+
+## Instalação
+
+### Com Docker
+
+- Primeiro instale os containers:
+```bash
+docker-compose up -d
+```
+- Em seguida abra o terminal interativo do container:
+```bash
+docker exec -it trybesmith bash
+```
+- Instale as dependências dentro do container:
+```bash
+npm install
+```
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://joanamds.github.io/#/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dev-joanamds/)
