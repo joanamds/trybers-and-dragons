@@ -6,15 +6,10 @@ Neste projeto fomos desafiados a criar uma simulação de jogo de RPG utilizando
 ## Screenshots
 ![TrybersAndDragons (1)](https://user-images.githubusercontent.com/106452876/228257159-1e7a2436-1c56-4659-ad21-a9a91f426cc5.png)
 
-## Tecnologias usadas
-Back-end:
-> Desenvolvido usando: Docker, docker-compose, TypeScript, POO
-
-
-
-## Instalação
-
-### Com Docker
+<details>
+  <summary> <strong> 🔽 Instalação </strong></summary>
+  
+### 🐳 Com Docker
 
 - Primeiro instale os containers:
 ```bash
@@ -28,6 +23,11 @@ docker exec -it trybesmith bash
 ```bash
 npm install
 ```
+</details>
+
+## Tecnologias usadas
+Back-end:
+> Desenvolvido usando: Docker, docker-compose, TypeScript, POO
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://joanamds.github.io/#/)
